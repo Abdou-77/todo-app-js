@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<script>
+// Calculator: prompt for numbers and operator, confirm for calculation, alert result
+var n1 = parseFloat(prompt('Enter first number:'));
+var n2 = parseFloat(prompt('Enter second number:'));
+var op = prompt('Enter operator (+, -, *, /):');
+var res = '';
+if(confirm('Calculate ' + n1 + ' ' + op + ' ' + n2 + '?')) {
+  if(op === '+') res = n1 + n2;
+  else if(op === '-') res = n1 - n2;
+  else if(op === '*') res = n1 * n2;
+  else if(op === '/') res = n2 !== 0 ? n1 / n2 : 'Error';
+  else res = 'Invalid';
+  alert('Result: ' + res);
+} else {
+  alert('Calculation cancelled');
+}
+</script>
