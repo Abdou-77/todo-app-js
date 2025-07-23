@@ -45,7 +45,7 @@ const todo_list = document.getElementById('todo-list');
 
 // ✅ USER'S WORK - Event listener setup and basic logic structure
 // 🔧 HELPER ADDITIONS - Enhanced with validation, date/time, proper HTML structure
-add_button.addEventListener("click", function() {
+function add_item() {
     const value = input_value.value;
     const clean_text = value.trim(); // ✅ USER'S WORK - Text cleaning
     
@@ -76,18 +76,36 @@ add_button.addEventListener("click", function() {
     const todoId = `todo-${Date.now()}`;
     
     // ✅ USER'S WORK (CONCEPT) - Setting innerHTML content
-    // 🔧 HELPER ENHANCEMENT - Enhanced with checkbox, label, date/time structure
+    // 🔧 HELPER ENHANCEMENT - Enhanced with checkbox, label, date/time structure, delete button
     // Create the HTML with checkbox, text, date and time
     li_todo.innerHTML = `
         <input type="checkbox" id="${todoId}">
         <label for="${todoId}">${clean_text}</label>
         <span class="todo-date">${dateString} at ${timeString}</span>
+        <button class="delete-btn" aria-label="Delete todo">×</button>
     `;
+    
+    // 🔧 HELPER ADDITION - Delete functionality with fade animation
+    const deleteBtn = li_todo.querySelector('.delete-btn');
+    deleteBtn.addEventListener('click', function() {
+        li_todo.classList.add('fade-out');
+        setTimeout(() => {
+            li_todo.remove();
+        }, 300); // Match the CSS animation duration
+    });
     
     todo_list.append(li_todo); // ✅ USER'S WORK - Appending to list
     
     // 🔧 HELPER ADDITION - Input clearing for better UX
     // Clear input
     input_value.value = '';
+}
+
+// ✅ USER'S WORK - Event listener setup
+// 🔧 HELPER FIX - Corrected function reference (removed parentheses)
+add_button.addEventListener("click", add_item);
+
+input_value.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") add_item();
 });
 
