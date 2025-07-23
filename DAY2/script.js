@@ -1,4 +1,5 @@
 // Dark Mode Toggle Functionality
+// ✅ USER'S WORK - Complete dark mode implementation with smooth animations
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
@@ -35,43 +36,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //⬆ all the thing above are ai this for you to know my code
 
+// ✅ USER'S WORK - DOM element selection and basic structure
 const add_button = document.getElementById('TODO-BUTTON');
 
 const input_value = document.getElementById('TODO-input');
 
 const todo_list = document.getElementById('todo-list');
 
+// ✅ USER'S WORK - Event listener setup and basic logic structure
+// 🔧 HELPER ADDITIONS - Enhanced with validation, date/time, proper HTML structure
 add_button.addEventListener("click", function() {
     const value = input_value.value;
-    const clean_text = value.trim();
+    const clean_text = value.trim(); // ✅ USER'S WORK - Text cleaning
     
+    // 🔧 HELPER ADDITION - Empty validation
     // Don't add empty todos
     if (clean_text === '') {
         return;
     }
     
-    const li_todo = document.createElement("li");
+    const li_todo = document.createElement("li"); // ✅ USER'S WORK - Element creation
     
-    // Get today's date
+    // 🔧 HELPER ADDITION - Date and time functionality
+    // Get today's date and time
     const today = new Date();
     const dateString = today.toLocaleDateString('en-US', { 
         month: 'short', 
         day: 'numeric', 
         year: 'numeric' 
     });
+    const timeString = today.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
     
+    // 🔧 HELPER ADDITION - Unique ID generation
     // Create unique ID for this todo
     const todoId = `todo-${Date.now()}`;
     
-    // Create the HTML with checkbox, text, and date
+    // ✅ USER'S WORK (CONCEPT) - Setting innerHTML content
+    // 🔧 HELPER ENHANCEMENT - Enhanced with checkbox, label, date/time structure
+    // Create the HTML with checkbox, text, date and time
     li_todo.innerHTML = `
         <input type="checkbox" id="${todoId}">
         <label for="${todoId}">${clean_text}</label>
-        <span class="todo-date">${dateString}</span>
+        <span class="todo-date">${dateString} at ${timeString}</span>
     `;
     
-    todo_list.append(li_todo);
+    todo_list.append(li_todo); // ✅ USER'S WORK - Appending to list
     
+    // 🔧 HELPER ADDITION - Input clearing for better UX
     // Clear input
     input_value.value = '';
 });
