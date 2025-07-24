@@ -14,10 +14,6 @@ A modern, responsive todo application built with vanilla JavaScript, HTML, and C
 - **Responsive Design**: Works perfectly on desktop and mobile devices
 - **Smooth Animations**: Beautiful fade-in/fade-out effects and hover animations
 
-## 🚀 Demo
-
-![Todo App Screenshot](https://via.placeholder.com/600x400?text=Todo+App+Screenshot)
-
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup structure
@@ -32,7 +28,6 @@ todo-app-js/
 ├── index.html          # Main HTML structure
 ├── style.css           # Styling and theme definitions
 ├── script.js           # JavaScript functionality
-└── README.md           # Project documentation
 ```
 
 ## 🎨 Design Features
