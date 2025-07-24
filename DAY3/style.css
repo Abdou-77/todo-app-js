@@ -1,9 +1,4 @@
-/* ===== TODO APP STYLING =====
-   ✅ USER'S WORK - Complete responsive design with modern styling
-   🔧 HELPER ADDITIONS - Enhanced checkbox styling and list item improvements
-*/
 
-/* ✅ USER'S WORK - Body layout and gradient background */
 body {
     display: flex;
     justify-content: center;
@@ -17,9 +12,6 @@ body {
     transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ✅ USER'S WORK - Container with glassmorphism effect and shadows */
-
-/* ✅ USER'S WORK - Container with glassmorphism effect and shadows */
 .container {
     padding: 40px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -32,9 +24,6 @@ body {
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ✅ USER'S WORK - Typography and header styling */
-
-/* ✅ USER'S WORK - Typography and header styling */
 .container h1 {
     text-align: center;
     color: #1f2937;
@@ -45,7 +34,6 @@ body {
     transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ✅ USER'S WORK - Header layout with theme toggle */
 .header {
     display: flex;
     justify-content: space-between;
@@ -58,9 +46,6 @@ body {
     flex: 1;
 }
 
-/* ✅ USER'S WORK - Theme toggle button with animations */
-
-/* ✅ USER'S WORK - Theme toggle button with animations */
 .theme-toggle {
     background: rgba(107, 114, 128, 0.1);
     border: 2px solid rgba(107, 114, 128, 0.2);
@@ -75,8 +60,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* ✅ USER'S WORK - Icon animations for theme toggle */
 
 .theme-toggle .sun-icon,
 .theme-toggle .moon-icon {
@@ -101,76 +84,116 @@ body {
     transform: scale(1.05);
 }
 
-/* ✅ USER'S WORK - Input and button styling with focus effects */
 .add-todo {
     display: flex;
     gap: 12px;
-    margin-bottom: 28px;
-    align-items: center;
+    margin-bottom: 16px;
+    align-items: stretch;
+    position: relative;
 }
 
 .add-todo input[type="text"] {
     flex: 1;
-    padding: 16px 20px;
+    padding: 18px 24px;
     border: 2px solid #e5e7eb;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 16px;
     outline: none;
-    transition: all 0.3s ease, background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #ffffff;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
     font-weight: 400;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.add-todo input[type="text"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .add-todo input[type="text"]:focus {
-    border-color: #6b7280;
-    box-shadow: 0 0 0 4px rgba(107, 114, 128, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
+    border-color: #6366f1;
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+    box-shadow: 
+        0 0 0 4px rgba(99, 102, 241, 0.1), 
+        0 8px 25px -5px rgba(99, 102, 241, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
 }
 
 .add-todo input[type="text"]::placeholder {
     color: #9ca3af;
     font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.add-todo input[type="text"]:focus::placeholder {
+    color: #d1d5db;
 }
 
 .add-todo button {
-    padding: 16px 20px;
-    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease, background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 60px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 70px;
+    box-shadow: 
+        0 4px 15px -3px rgba(99, 102, 241, 0.4), 
+        0 2px 6px -1px rgba(99, 102, 241, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.add-todo button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
 }
 
 .add-todo button:hover {
-    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 25px -5px rgba(99, 102, 241, 0.5), 
+        0 4px 12px -2px rgba(99, 102, 241, 0.3);
+}
+
+.add-todo button:hover::before {
+    left: 100%;
 }
 
 .add-todo button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 15px -3px rgba(99, 102, 241, 0.4), 
+        0 2px 6px -1px rgba(99, 102, 241, 0.2);
 }
 
-/* ✅ USER'S WORK - Todo list structure and spacing */
-/* 🔧 HELPER ADDITIONS - Enhanced list item styling for text display */
-
-/* ✅ USER'S WORK - Todo list structure and spacing */
-/* 🔧 HELPER ADDITIONS - Enhanced list item styling for text display */
 #todo-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* ✅ USER'S WORK - List item layout and hover effects */
-/* 🔧 HELPER ADDITION - Added typography for text list items */
 #todo-list li {
     display: flex;
     align-items: center;
@@ -197,35 +220,26 @@ body {
     border-bottom: none;
 }
 
-/* ✅ USER'S WORK - Basic checkbox styling */
-/* 🔧 HELPER ENHANCEMENTS - Enhanced with borders, hover effects, and transitions */
-
-/* ✅ USER'S WORK - Basic checkbox styling */
-/* 🔧 HELPER ENHANCEMENTS - Enhanced with borders, hover effects, and transitions */
 #todo-list input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
     accent-color: #6b7280;
     border-radius: 4px;
-    border: 2px solid #e5e7eb; /* 🔧 HELPER ADDITION */
-    background-color: #ffffff; /* 🔧 HELPER ADDITION */
-    transition: all 0.2s ease; /* 🔧 HELPER ADDITION */
+    border: 2px solid #e5e7eb;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
 }
 
-/* 🔧 HELPER ADDITION - Checkbox hover effects */
 #todo-list input[type="checkbox"]:hover {
     border-color: #6b7280;
     transform: scale(1.05);
 }
 
-/* 🔧 HELPER ADDITION - Checkbox checked state styling */
 #todo-list input[type="checkbox"]:checked {
     background-color: #6b7280;
     border-color: #6b7280;
 }
-
-/* ✅ USER'S WORK - Label styling and strikethrough effect */
 
 #todo-list label {
     flex: 1;
@@ -242,7 +256,6 @@ body {
     text-decoration: line-through;
 }
 
-/* 🔧 HELPER ADDITION - Date timestamp styling */
 .todo-date {
     font-size: 12px;
     color: #9ca3af;
@@ -251,7 +264,6 @@ body {
     white-space: nowrap;
 }
 
-/* 🔧 HELPER ADDITION - Delete button styling */
 .delete-btn {
     background: #ef4444;
     color: white;
@@ -281,15 +293,13 @@ body {
     transform: scale(1);
 }
 
-/* 🔧 HELPER ADDITION - Fade out animation for deletion */
 .fade-out {
     opacity: 0;
     transform: translateX(20px);
     transition: all 0.3s ease;
 }
 
-/* Dark Mode Styles */
-/* Theme transition animation */
+
 .theme-transitioning * {
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
@@ -328,26 +338,41 @@ body.dark-mode .theme-toggle .moon-icon {
 }
 
 body.dark-mode .add-todo input[type="text"] {
-    background-color: #374151;
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
     border: 2px solid #4b5563;
     color: #f9fafb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .add-todo input[type="text"]:focus {
-    border-color: #9ca3af;
-    box-shadow: 0 0 0 4px rgba(156, 163, 175, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-color: #8b5cf6;
+    background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+    box-shadow: 
+        0 0 0 4px rgba(139, 92, 246, 0.1), 
+        0 8px 25px -5px rgba(139, 92, 246, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .add-todo input[type="text"]::placeholder {
     color: #6b7280;
 }
 
+body.dark-mode .add-todo input[type="text"]:focus::placeholder {
+    color: #9ca3af;
+}
+
 body.dark-mode .add-todo button {
-    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    box-shadow: 
+        0 4px 15px -3px rgba(139, 92, 246, 0.4), 
+        0 2px 6px -1px rgba(139, 92, 246, 0.2);
 }
 
 body.dark-mode .add-todo button:hover {
-    background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    box-shadow: 
+        0 8px 25px -5px rgba(139, 92, 246, 0.5), 
+        0 4px 12px -2px rgba(139, 92, 246, 0.3);
 }
 
 body.dark-mode #todo-list li {
@@ -386,7 +411,6 @@ body.dark-mode .todo-date {
     color: #6b7280;
 }
 
-/* 🔧 HELPER ADDITION - Dark mode delete button styling */
 body.dark-mode .delete-btn {
     background: #f87171;
 }
@@ -395,3 +419,42 @@ body.dark-mode .delete-btn:hover {
     background: #ef4444;
 }
 
+
+.clear-all-btn {
+    background: #ef4444;
+    color: #ffffff;
+    border: 1px solid #dc2626;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 8px auto 16px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.clear-all-btn:hover {
+    background: #dc2626;
+    border-color: #b91c1c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+.clear-all-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+body.dark-mode .clear-all-btn {
+    background: #ef4444;
+    border-color: #dc2626;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+body.dark-mode .clear-all-btn:hover {
+    background: #dc2626;
+    border-color: #b91c1c;
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
